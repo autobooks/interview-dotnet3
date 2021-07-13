@@ -1,29 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
-using Volo.Abp.Data;
-using Volo.Abp.DependencyInjection;
-using Volo.Abp.Identity;
-using Volo.Abp.MultiTenancy;
-using Volo.Abp.TenantManagement;
-
-namespace GroceryStore.Data
+﻿namespace GroceryStore.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
+    using System.Runtime.InteropServices;
+    using System.Threading.Tasks;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Logging.Abstractions;
+    using Volo.Abp.Data;
+    using Volo.Abp.DependencyInjection;
+    using Volo.Abp.Identity;
+    using Volo.Abp.MultiTenancy;
+    using Volo.Abp.TenantManagement;
+
+    /// <summary>
+	/// Defines the <see cref="GroceryStoreDbMigrationService" />.
+	/// </summary>
     public class GroceryStoreDbMigrationService : ITransientDependency
     {
+        /// <summary>
+		/// Gets or sets the Logger.
+		/// </summary>
         public ILogger<GroceryStoreDbMigrationService> Logger { get; set; }
 
+        /// <summary>
+		/// Defines the _dataSeeder.
+		/// </summary>
         private readonly IDataSeeder _dataSeeder;
+
+        /// <summary>
+		/// Defines the _dbSchemaMigrators.
+		/// </summary>
         private readonly IEnumerable<IGroceryStoreDbSchemaMigrator> _dbSchemaMigrators;
+
+        /// <summary>
+		/// Defines the _tenantRepository.
+		/// </summary>
         private readonly ITenantRepository _tenantRepository;
+
+        /// <summary>
+		/// Defines the _currentTenant.
+		/// </summary>
         private readonly ICurrentTenant _currentTenant;
 
+        /// <summary>
+		/// Initializes a new instance of the <see cref="GroceryStoreDbMigrationService"/> class.
+		/// </summary>
+		/// <param name="dataSeeder">The dataSeeder<see cref="IDataSeeder"/>.</param>
+		/// <param name="dbSchemaMigrators">The dbSchemaMigrators<see cref="IEnumerable{IGroceryStoreDbSchemaMigrator}"/>.</param>
+		/// <param name="tenantRepository">The tenantRepository<see cref="ITenantRepository"/>.</param>
+		/// <param name="currentTenant">The currentTenant<see cref="ICurrentTenant"/>.</param>
         public GroceryStoreDbMigrationService(
             IDataSeeder dataSeeder,
             IEnumerable<IGroceryStoreDbSchemaMigrator> dbSchemaMigrators,
@@ -38,6 +66,10 @@ namespace GroceryStore.Data
             Logger = NullLogger<GroceryStoreDbMigrationService>.Instance;
         }
 
+        /// <summary>
+		/// The MigrateAsync.
+		/// </summary>
+		/// <returns>The <see cref="Task"/>.</returns>
         public async Task MigrateAsync()
         {
             var initialMigrationAdded = AddInitialMigrationIfNotExist();
@@ -86,6 +118,11 @@ namespace GroceryStore.Data
             Logger.LogInformation("You can safely end this process...");
         }
 
+        /// <summary>
+		/// The MigrateDatabaseSchemaAsync.
+		/// </summary>
+		/// <param name="tenant">The tenant<see cref="Tenant"/>.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
         private async Task MigrateDatabaseSchemaAsync(Tenant tenant = null)
         {
             Logger.LogInformation(
@@ -98,6 +135,11 @@ namespace GroceryStore.Data
             }
         }
 
+        /// <summary>
+		/// The SeedDataAsync.
+		/// </summary>
+		/// <param name="tenant">The tenant<see cref="Tenant"/>.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
         private async Task SeedDataAsync(Tenant tenant = null)
         {
             Logger.LogInformation(
@@ -116,6 +158,10 @@ namespace GroceryStore.Data
             );
         }
 
+        /// <summary>
+		/// The AddInitialMigrationIfNotExist.
+		/// </summary>
+		/// <returns>The <see cref="bool"/>.</returns>
         private bool AddInitialMigrationIfNotExist()
         {
             try
@@ -149,6 +195,10 @@ namespace GroceryStore.Data
             }
         }
 
+        /// <summary>
+		/// The DbMigrationsProjectExists.
+		/// </summary>
+		/// <returns>The <see cref="bool"/>.</returns>
         private bool DbMigrationsProjectExists()
         {
             var dbMigrationsProjectFolder = GetDbMigrationsProjectFolderPath();
@@ -156,6 +206,10 @@ namespace GroceryStore.Data
             return dbMigrationsProjectFolder != null;
         }
 
+        /// <summary>
+		/// The MigrationsFolderExists.
+		/// </summary>
+		/// <returns>The <see cref="bool"/>.</returns>
         private bool MigrationsFolderExists()
         {
             var dbMigrationsProjectFolder = GetDbMigrationsProjectFolderPath();
@@ -163,6 +217,9 @@ namespace GroceryStore.Data
             return Directory.Exists(Path.Combine(dbMigrationsProjectFolder, "Migrations"));
         }
 
+        /// <summary>
+		/// The AddInitialMigration.
+		/// </summary>
         private void AddInitialMigration()
         {
             Logger.LogInformation("Creating initial migration...");
@@ -198,6 +255,10 @@ namespace GroceryStore.Data
             }
         }
 
+        /// <summary>
+		/// The GetDbMigrationsProjectFolderPath.
+		/// </summary>
+		/// <returns>The <see cref="string"/>.</returns>
         private string GetDbMigrationsProjectFolderPath()
         {
             var slnDirectoryPath = GetSolutionDirectoryPath();
@@ -213,6 +274,10 @@ namespace GroceryStore.Data
                 .FirstOrDefault(d => d.EndsWith(".DbMigrations"));
         }
 
+        /// <summary>
+		/// The GetSolutionDirectoryPath.
+		/// </summary>
+		/// <returns>The <see cref="string"/>.</returns>
         private string GetSolutionDirectoryPath()
         {
             var currentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());

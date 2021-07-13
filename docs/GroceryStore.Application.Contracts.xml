@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.Application.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.Customers.EditCustomerDto">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Customers.EditCustomerDto" />.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Customers.EditCustomerDto.LegacyId">
+            <summary>
+            Gets or sets the LegacyId.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Customers.EditCustomerDto.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.Customers.ICustomerAppService">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Customers.ICustomerAppService" />.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.Customers.ViewCustomerDto">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Customers.ViewCustomerDto" />.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Customers.ViewCustomerDto.LegacyId">
+            <summary>
+            Gets or sets the LegacyId.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Customers.ViewCustomerDto.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreApplicationContractsModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreApplicationContractsModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreApplicationContractsModule.PreConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The PreConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreDtoExtensions">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreDtoExtensions" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.GroceryStoreDtoExtensions.OneTimeRunner">
+            <summary>
+            Defines the OneTimeRunner.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreDtoExtensions.Configure">
+            <summary>
+            The Configure.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.Permissions.GroceryStorePermissionDefinitionProvider">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Permissions.GroceryStorePermissionDefinitionProvider" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Permissions.GroceryStorePermissionDefinitionProvider.Define(Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext)">
+            <summary>
+            The Define.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Authorization.Permissions.IPermissionDefinitionContext"/>.</param>
+        </member>
+        <member name="M:GroceryStore.Permissions.GroceryStorePermissionDefinitionProvider.L(System.String)">
+            <summary>
+            The L.
+            </summary>
+            <param name="name">The name<see cref="T:System.String"/>.</param>
+            <returns>The <see cref="T:Volo.Abp.Localization.LocalizableString"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.Permissions.GroceryStorePermissions">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Permissions.GroceryStorePermissions" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Permissions.GroceryStorePermissions.GroupName">
+            <summary>
+            Defines the GroupName.
+            </summary>
+        </member>
+    </members>
+</doc>

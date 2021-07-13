@@ -1,21 +1,22 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using GroceryStore.MultiTenancy;
-using Volo.Abp.AuditLogging;
-using Volo.Abp.BackgroundJobs;
-using Volo.Abp.Emailing;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
-using Volo.Abp.IdentityServer;
-using Volo.Abp.Modularity;
-using Volo.Abp.MultiTenancy;
-using Volo.Abp.PermissionManagement.Identity;
-using Volo.Abp.PermissionManagement.IdentityServer;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.TenantManagement;
-
-namespace GroceryStore
+﻿namespace GroceryStore
 {
+    using GroceryStore.MultiTenancy;
+    using Volo.Abp.AuditLogging;
+    using Volo.Abp.BackgroundJobs;
+    using Volo.Abp.Emailing;
+    using Volo.Abp.FeatureManagement;
+    using Volo.Abp.Identity;
+    using Volo.Abp.IdentityServer;
+    using Volo.Abp.Modularity;
+    using Volo.Abp.MultiTenancy;
+    using Volo.Abp.PermissionManagement.Identity;
+    using Volo.Abp.PermissionManagement.IdentityServer;
+    using Volo.Abp.SettingManagement;
+    using Volo.Abp.TenantManagement;
+
+    /// <summary>
+	/// Defines the <see cref="GroceryStoreDomainModule" />.
+	/// </summary>
     [DependsOn(
         typeof(GroceryStoreDomainSharedModule),
         typeof(AbpAuditLoggingDomainModule),
@@ -31,6 +32,10 @@ namespace GroceryStore
     )]
     public class GroceryStoreDomainModule : AbpModule
     {
+        /// <summary>
+		/// The ConfigureServices.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             Configure<AbpMultiTenancyOptions>(
@@ -39,9 +44,6 @@ namespace GroceryStore
                     options.IsEnabled = MultiTenancyConsts.IsEnabled;
                 }
             );
-#if DEBUG
-            context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());
-#endif
         }
     }
 }

@@ -11,8 +11,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace GroceryStore.Migrations
 {
     [DbContext(typeof(GroceryStoreMigrationsDbContext))]
-    [Migration("20210713002259_Create_App_Customers_AltKey")]
-    partial class Create_App_Customers_AltKey
+    [Migration("20210713145858_Define_App.Customers")]
+    partial class Define_AppCustomers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace GroceryStore.Migrations
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.7")
+                .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("GroceryStore.Customers.Customer", b =>

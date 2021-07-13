@@ -1,12 +1,19 @@
-﻿using GroceryStore.Customers;
-using Microsoft.EntityFrameworkCore;
-using Volo.Abp;
-using Volo.Abp.EntityFrameworkCore.Modeling;
-
-namespace GroceryStore.EntityFrameworkCore
+﻿namespace GroceryStore.EntityFrameworkCore
 {
+    using GroceryStore.Customers;
+    using Microsoft.EntityFrameworkCore;
+    using Volo.Abp;
+    using Volo.Abp.EntityFrameworkCore.Modeling;
+
+    /// <summary>
+	/// Defines the <see cref="GroceryStoreDbContextModelCreatingExtensions" />.
+	/// </summary>
     public static class GroceryStoreDbContextModelCreatingExtensions
     {
+        /// <summary>
+		/// The ConfigureGroceryStore.
+		/// </summary>
+		/// <param name="builder">The builder<see cref="ModelBuilder"/>.</param>
         public static void ConfigureGroceryStore(this ModelBuilder builder)
         {
             Check.NotNull(builder, nameof(builder));

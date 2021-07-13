@@ -1,22 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
+	<Import Project="..\..\common.props" />
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>GroceryStore</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<RootNamespace>GroceryStore</RootNamespace>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<DocumentationFile>./../../docs/$(AssemblyName).xml</DocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\GroceryStore.EntityFrameworkCore\GroceryStore.EntityFrameworkCore.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\GroceryStore.EntityFrameworkCore\GroceryStore.EntityFrameworkCore.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="CSharpier.MsBuild" Version="0.9.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.*">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-      <PrivateAssets>compile; contentFiles; build; buildMultitargeting; buildTransitive; analyzers; native</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="CSharpier.MsBuild" Version="0.9.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.*">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+			<PrivateAssets>compile; contentFiles; build; buildMultitargeting; buildTransitive; analyzers; native</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
 </Project>

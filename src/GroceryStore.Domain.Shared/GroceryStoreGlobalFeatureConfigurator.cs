@@ -1,11 +1,20 @@
-﻿using Volo.Abp.Threading;
-
-namespace GroceryStore
+﻿namespace GroceryStore
 {
+    using Volo.Abp.Threading;
+
+    /// <summary>
+	/// Defines the <see cref="GroceryStoreGlobalFeatureConfigurator" />.
+	/// </summary>
     public static class GroceryStoreGlobalFeatureConfigurator
     {
+        /// <summary>
+		/// Defines the OneTimeRunner.
+		/// </summary>
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
 
+        /// <summary>
+		/// The Configure.
+		/// </summary>
         public static void Configure()
         {
             OneTimeRunner.Run(

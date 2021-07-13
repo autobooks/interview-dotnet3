@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.HttpApi.Client</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.GroceryStoreHttpApiClientModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreHttpApiClientModule" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.GroceryStoreHttpApiClientModule.RemoteServiceName">
+            <summary>
+            Defines the RemoteServiceName.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreHttpApiClientModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+    </members>
+</doc>

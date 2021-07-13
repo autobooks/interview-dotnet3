@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.Customers.Customer">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Customers.Customer" />.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Customers.Customer.LegacyId">
+            <summary>
+            Gets or sets the LegacyId.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Customers.Customer.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.Customers.CustomerDataSeedContributor">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Customers.CustomerDataSeedContributor" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Customers.CustomerDataSeedContributor._customerRepo">
+            <summary>
+            Defines the _customerRepo.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerDataSeedContributor.#ctor(Volo.Abp.Domain.Repositories.IRepository{GroceryStore.Customers.Customer})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.Customers.CustomerDataSeedContributor"/> class.
+            </summary>
+            <param name="customerRepo">The customerRepo<see cref="T:Volo.Abp.Domain.Repositories.IRepository`1"/>.</param>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerDataSeedContributor.SeedAsync(Volo.Abp.Data.DataSeedContext)">
+            <summary>
+            The SeedAsync.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Data.DataSeedContext"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.Data.GroceryStoreDbMigrationService">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Data.GroceryStoreDbMigrationService" />.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Data.GroceryStoreDbMigrationService.Logger">
+            <summary>
+            Gets or sets the Logger.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Data.GroceryStoreDbMigrationService._dataSeeder">
+            <summary>
+            Defines the _dataSeeder.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Data.GroceryStoreDbMigrationService._dbSchemaMigrators">
+            <summary>
+            Defines the _dbSchemaMigrators.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Data.GroceryStoreDbMigrationService._tenantRepository">
+            <summary>
+            Defines the _tenantRepository.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Data.GroceryStoreDbMigrationService._currentTenant">
+            <summary>
+            Defines the _currentTenant.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.#ctor(Volo.Abp.Data.IDataSeeder,System.Collections.Generic.IEnumerable{GroceryStore.Data.IGroceryStoreDbSchemaMigrator},Volo.Abp.TenantManagement.ITenantRepository,Volo.Abp.MultiTenancy.ICurrentTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.Data.GroceryStoreDbMigrationService"/> class.
+            </summary>
+            <param name="dataSeeder">The dataSeeder<see cref="T:Volo.Abp.Data.IDataSeeder"/>.</param>
+            <param name="dbSchemaMigrators">The dbSchemaMigrators<see cref="T:System.Collections.Generic.IEnumerable`1"/>.</param>
+            <param name="tenantRepository">The tenantRepository<see cref="T:Volo.Abp.TenantManagement.ITenantRepository"/>.</param>
+            <param name="currentTenant">The currentTenant<see cref="T:Volo.Abp.MultiTenancy.ICurrentTenant"/>.</param>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.MigrateAsync">
+            <summary>
+            The MigrateAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.MigrateDatabaseSchemaAsync(Volo.Abp.TenantManagement.Tenant)">
+            <summary>
+            The MigrateDatabaseSchemaAsync.
+            </summary>
+            <param name="tenant">The tenant<see cref="T:Volo.Abp.TenantManagement.Tenant"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.SeedDataAsync(Volo.Abp.TenantManagement.Tenant)">
+            <summary>
+            The SeedDataAsync.
+            </summary>
+            <param name="tenant">The tenant<see cref="T:Volo.Abp.TenantManagement.Tenant"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.AddInitialMigrationIfNotExist">
+            <summary>
+            The AddInitialMigrationIfNotExist.
+            </summary>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.DbMigrationsProjectExists">
+            <summary>
+            The DbMigrationsProjectExists.
+            </summary>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.MigrationsFolderExists">
+            <summary>
+            The MigrationsFolderExists.
+            </summary>
+            <returns>The <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.AddInitialMigration">
+            <summary>
+            The AddInitialMigration.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.GetDbMigrationsProjectFolderPath">
+            <summary>
+            The GetDbMigrationsProjectFolderPath.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Data.GroceryStoreDbMigrationService.GetSolutionDirectoryPath">
+            <summary>
+            The GetSolutionDirectoryPath.
+            </summary>
+            <returns>The <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.Data.IGroceryStoreDbSchemaMigrator">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Data.IGroceryStoreDbSchemaMigrator" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Data.IGroceryStoreDbSchemaMigrator.MigrateAsync">
+            <summary>
+            The MigrateAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.Data.NullGroceryStoreDbSchemaMigrator">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Data.NullGroceryStoreDbSchemaMigrator" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Data.NullGroceryStoreDbSchemaMigrator.MigrateAsync">
+            <summary>
+            The MigrateAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreConsts">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreConsts" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.GroceryStoreConsts.DbSchemaApp">
+            <summary>
+            Defines the DbSchemaApp.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.GroceryStoreConsts.DbSchemaConfig">
+            <summary>
+            Defines the DbSchemaConfig.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreDomainModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreDomainModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreDomainModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.IdentityServer.IdentityServerDataSeedContributor">
+            <summary>
+            Defines the <see cref="T:GroceryStore.IdentityServer.IdentityServerDataSeedContributor" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._apiResourceRepository">
+            <summary>
+            Defines the _apiResourceRepository.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._apiScopeRepository">
+            <summary>
+            Defines the _apiScopeRepository.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._clientRepository">
+            <summary>
+            Defines the _clientRepository.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._identityResourceDataSeeder">
+            <summary>
+            Defines the _identityResourceDataSeeder.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._guidGenerator">
+            <summary>
+            Defines the _guidGenerator.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._permissionDataSeeder">
+            <summary>
+            Defines the _permissionDataSeeder.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._configuration">
+            <summary>
+            Defines the _configuration.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.IdentityServer.IdentityServerDataSeedContributor._currentTenant">
+            <summary>
+            Defines the _currentTenant.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.#ctor(Volo.Abp.IdentityServer.Clients.IClientRepository,Volo.Abp.IdentityServer.ApiResources.IApiResourceRepository,Volo.Abp.IdentityServer.ApiScopes.IApiScopeRepository,Volo.Abp.IdentityServer.IdentityResources.IIdentityResourceDataSeeder,Volo.Abp.Guids.IGuidGenerator,Volo.Abp.PermissionManagement.IPermissionDataSeeder,Microsoft.Extensions.Configuration.IConfiguration,Volo.Abp.MultiTenancy.ICurrentTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.IdentityServer.IdentityServerDataSeedContributor"/> class.
+            </summary>
+            <param name="clientRepository">The clientRepository<see cref="T:Volo.Abp.IdentityServer.Clients.IClientRepository"/>.</param>
+            <param name="apiResourceRepository">The apiResourceRepository<see cref="T:Volo.Abp.IdentityServer.ApiResources.IApiResourceRepository"/>.</param>
+            <param name="apiScopeRepository">The apiScopeRepository<see cref="T:Volo.Abp.IdentityServer.ApiScopes.IApiScopeRepository"/>.</param>
+            <param name="identityResourceDataSeeder">The identityResourceDataSeeder<see cref="T:Volo.Abp.IdentityServer.IdentityResources.IIdentityResourceDataSeeder"/>.</param>
+            <param name="guidGenerator">The guidGenerator<see cref="T:Volo.Abp.Guids.IGuidGenerator"/>.</param>
+            <param name="permissionDataSeeder">The permissionDataSeeder<see cref="T:Volo.Abp.PermissionManagement.IPermissionDataSeeder"/>.</param>
+            <param name="configuration">The configuration<see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/>.</param>
+            <param name="currentTenant">The currentTenant<see cref="T:Volo.Abp.MultiTenancy.ICurrentTenant"/>.</param>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.SeedAsync(Volo.Abp.Data.DataSeedContext)">
+            <summary>
+            The SeedAsync.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Data.DataSeedContext"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.CreateApiScopesAsync">
+            <summary>
+            The CreateApiScopesAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.CreateApiResourcesAsync">
+            <summary>
+            The CreateApiResourcesAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.CreateApiResourceAsync(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            The CreateApiResourceAsync.
+            </summary>
+            <param name="name">The name<see cref="T:System.String"/>.</param>
+            <param name="claims">The claims<see cref="!:IEnumerable&lt;string&gt;"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.CreateApiScopeAsync(System.String)">
+            <summary>
+            The CreateApiScopeAsync.
+            </summary>
+            <param name="name">The name<see cref="T:System.String"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.CreateClientsAsync">
+            <summary>
+            The CreateClientsAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.IdentityServer.IdentityServerDataSeedContributor.CreateClientAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            The CreateClientAsync.
+            </summary>
+            <param name="name">The name<see cref="T:System.String"/>.</param>
+            <param name="scopes">The scopes<see cref="!:IEnumerable&lt;string&gt;"/>.</param>
+            <param name="grantTypes">The grantTypes<see cref="!:IEnumerable&lt;string&gt;"/>.</param>
+            <param name="secret">The secret<see cref="T:System.String"/>.</param>
+            <param name="redirectUri">The redirectUri<see cref="T:System.String"/>.</param>
+            <param name="postLogoutRedirectUri">The postLogoutRedirectUri<see cref="T:System.String"/>.</param>
+            <param name="frontChannelLogoutUri">The frontChannelLogoutUri<see cref="T:System.String"/>.</param>
+            <param name="requireClientSecret">The requireClientSecret<see cref="T:System.Boolean"/>.</param>
+            <param name="requirePkce">The requirePkce<see cref="T:System.Boolean"/>.</param>
+            <param name="permissions">The permissions<see cref="!:IEnumerable&lt;string&gt;"/>.</param>
+            <param name="corsOrigins">The corsOrigins<see cref="!:IEnumerable&lt;string&gt;"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.Settings.GroceryStoreSettingDefinitionProvider">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Settings.GroceryStoreSettingDefinitionProvider" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Settings.GroceryStoreSettingDefinitionProvider.Define(Volo.Abp.Settings.ISettingDefinitionContext)">
+            <summary>
+            The Define.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Settings.ISettingDefinitionContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.Settings.GroceryStoreSettings">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Settings.GroceryStoreSettings" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Settings.GroceryStoreSettings.Prefix">
+            <summary>
+            Defines the Prefix.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.Users.AppUser">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Users.AppUser" />.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.TenantId">
+            <summary>
+            Gets the TenantId.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.UserName">
+            <summary>
+            Gets the UserName.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.Name">
+            <summary>
+            Gets the Name.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.Surname">
+            <summary>
+            Gets the Surname.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.Email">
+            <summary>
+            Gets the Email.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.EmailConfirmed">
+            <summary>
+            Gets a value indicating whether EmailConfirmed.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.PhoneNumber">
+            <summary>
+            Gets the PhoneNumber.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Users.AppUser.PhoneNumberConfirmed">
+            <summary>
+            Gets a value indicating whether PhoneNumberConfirmed.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Users.AppUser.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:GroceryStore.Users.AppUser"/> class from being created.
+            </summary>
+        </member>
+    </members>
+</doc>

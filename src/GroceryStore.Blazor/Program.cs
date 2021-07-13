@@ -1,18 +1,26 @@
-using System;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using Serilog;
-using Serilog.Events;
-
 namespace GroceryStore.Blazor
 {
+    using System;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Hosting;
+    using Serilog;
+    using Serilog.Events;
+
+    /// <summary>
+	/// Defines the <see cref="Program" />.
+	/// </summary>
     public class Program
     {
+        /// <summary>
+		/// The Main.
+		/// </summary>
+		/// <param name="args">The args<see cref="string[]"/>.</param>
+		/// <returns>The <see cref="int"/>.</returns>
         public static int Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
 #if DEBUG
-                .MinimumLevel.Debug()
+				.MinimumLevel.Debug()
 #else
             .MinimumLevel.Information()
 #endif
@@ -21,7 +29,7 @@ namespace GroceryStore.Blazor
                 .Enrich.FromLogContext()
                 .WriteTo.Async(c => c.File("Logs/logs.txt"))
 #if DEBUG
-                .WriteTo.Async(c => c.Console())
+				.WriteTo.Async(c => c.Console())
 #endif
                 .CreateLogger();
 
@@ -42,6 +50,11 @@ namespace GroceryStore.Blazor
             }
         }
 
+        /// <summary>
+		/// The CreateHostBuilder.
+		/// </summary>
+		/// <param name="args">The args<see cref="string[]"/>.</param>
+		/// <returns>The <see cref="IHostBuilder"/>.</returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(

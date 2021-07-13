@@ -1,26 +1,38 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json.Linq;
-using Volo.Abp.Data;
-using Volo.Abp.DependencyInjection;
-using Volo.Abp.Domain.Repositories;
-
-namespace GroceryStore.Customers
+﻿namespace GroceryStore.Customers
 {
+    using System;
+    using System.IO;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Newtonsoft.Json.Linq;
+    using Volo.Abp.Data;
+    using Volo.Abp.DependencyInjection;
+    using Volo.Abp.Domain.Repositories;
+
+    /// <summary>
+	/// Defines the <see cref="CustomerDataSeedContributor" />.
+	/// </summary>
     public class CustomerDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
+        /// <summary>
+		/// Defines the _customerRepo.
+		/// </summary>
         private readonly IRepository<Customer> _customerRepo;
 
+        /// <summary>
+		/// Initializes a new instance of the <see cref="CustomerDataSeedContributor"/> class.
+		/// </summary>
+		/// <param name="customerRepo">The customerRepo<see cref="IRepository{Customer}"/>.</param>
         public CustomerDataSeedContributor(IRepository<Customer> customerRepo)
         {
             _customerRepo = customerRepo;
         }
 
+        /// <summary>
+		/// The SeedAsync.
+		/// </summary>
+		/// <param name="context">The context<see cref="DataSeedContext"/>.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
         public async Task SeedAsync(DataSeedContext context)
         {
             // if this has already been populated, ignore

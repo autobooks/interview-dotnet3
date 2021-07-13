@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.DbMigrator</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.DbMigrator.DbMigratorHostedService">
+            <summary>
+            Defines the <see cref="T:GroceryStore.DbMigrator.DbMigratorHostedService" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.DbMigrator.DbMigratorHostedService._hostApplicationLifetime">
+            <summary>
+            Defines the _hostApplicationLifetime.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.DbMigrator.DbMigratorHostedService.#ctor(Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.DbMigrator.DbMigratorHostedService"/> class.
+            </summary>
+            <param name="hostApplicationLifetime">The hostApplicationLifetime<see cref="T:Microsoft.Extensions.Hosting.IHostApplicationLifetime"/>.</param>
+        </member>
+        <member name="M:GroceryStore.DbMigrator.DbMigratorHostedService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            The StartAsync.
+            </summary>
+            <param name="cancellationToken">The cancellationToken<see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.DbMigrator.DbMigratorHostedService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            The StopAsync.
+            </summary>
+            <param name="cancellationToken">The cancellationToken<see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.DbMigrator.GroceryStoreDbMigratorModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.DbMigrator.GroceryStoreDbMigratorModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.DbMigrator.GroceryStoreDbMigratorModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.DbMigrator.Program">
+            <summary>
+            Defines the <see cref="T:GroceryStore.DbMigrator.Program" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.DbMigrator.Program.Main(System.String[])">
+            <summary>
+            The Main.
+            </summary>
+            <param name="args">The args<see cref="!:string[]"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.DbMigrator.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            The CreateHostBuilder.
+            </summary>
+            <param name="args">The args<see cref="!:string[]"/>.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/>.</returns>
+        </member>
+    </members>
+</doc>

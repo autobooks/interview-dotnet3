@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.EntityFrameworkCore.DbMigrations</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.EntityFrameworkCore.EntityFrameworkCoreGroceryStoreDbSchemaMigrator">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.EntityFrameworkCoreGroceryStoreDbSchemaMigrator" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.EntityFrameworkCore.EntityFrameworkCoreGroceryStoreDbSchemaMigrator._serviceProvider">
+            <summary>
+            Defines the _serviceProvider.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.EntityFrameworkCoreGroceryStoreDbSchemaMigrator.#ctor(System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.EntityFrameworkCore.EntityFrameworkCoreGroceryStoreDbSchemaMigrator"/> class.
+            </summary>
+            <param name="serviceProvider">The serviceProvider<see cref="T:System.IServiceProvider"/>.</param>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.EntityFrameworkCoreGroceryStoreDbSchemaMigrator.MigrateAsync">
+            <summary>
+            The MigrateAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.EntityFrameworkCore.GroceryStoreEntityFrameworkCoreDbMigrationsModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreEntityFrameworkCoreDbMigrationsModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreEntityFrameworkCoreDbMigrationsModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContext">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContext" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContext"/> class.
+            </summary>
+            <param name="options">The options<see cref="T:Microsoft.EntityFrameworkCore.DbContextOptions`1"/>.</param>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            The OnModelCreating.
+            </summary>
+            <param name="builder">The builder<see cref="T:Microsoft.EntityFrameworkCore.ModelBuilder"/>.</param>
+        </member>
+        <member name="T:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContextFactory">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContextFactory" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContextFactory.CreateDbContext(System.String[])">
+            <summary>
+            The CreateDbContext.
+            </summary>
+            <param name="args">The args<see cref="!:string[]"/>.</param>
+            <returns>The <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContext"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreMigrationsDbContextFactory.BuildConfiguration">
+            <summary>
+            The BuildConfiguration.
+            </summary>
+            <returns>The <see cref="T:Microsoft.Extensions.Configuration.IConfigurationRoot"/>.</returns>
+        </member>
+    </members>
+</doc>

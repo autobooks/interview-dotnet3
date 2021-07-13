@@ -1,16 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using Volo.Abp.Domain.Entities;
-
-namespace GroceryStore.Customers
+﻿namespace GroceryStore.Customers
 {
+    using System;
+    using Volo.Abp.Domain.Entities;
+
+    /// <summary>
+    /// Defines the <see cref="Customer" />.
+    /// </summary>
     public class Customer : Entity<Guid>
     {
+        /// <summary>
+        /// Gets or sets the LegacyId.
+        /// </summary>
         public int LegacyId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Name.
+        /// </summary>
         public string Name { get; set; }
     }
 }

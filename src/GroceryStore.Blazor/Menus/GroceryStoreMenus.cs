@@ -1,10 +1,18 @@
 ﻿namespace GroceryStore.Blazor.Menus
 {
+    /// <summary>
+	/// Defines the <see cref="GroceryStoreMenus" />.
+	/// </summary>
     public class GroceryStoreMenus
     {
+        /// <summary>
+		/// Defines the Prefix.
+		/// </summary>
         private const string Prefix = "GroceryStore";
-        public const string Home = Prefix + ".Home";
-        //Add your menu items here...
 
+        /// <summary>
+		/// Defines the Home.
+		/// </summary>
+        public const string Home = Prefix + ".Home";
     }
 }

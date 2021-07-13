@@ -1,49 +1,46 @@
-﻿using System;
-using System.IO;
-using System.Net.Http;
-using Blazorise.Bootstrap;
-using Blazorise.Icons.FontAwesome;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using GroceryStore.Blazor.Menus;
-using GroceryStore.EntityFrameworkCore;
-using GroceryStore.Localization;
-using GroceryStore.MultiTenancy;
-using Volo.Abp;
-using Volo.Abp.Account.Web;
-using Volo.Abp.AspNetCore.Authentication.JwtBearer;
-using Volo.Abp.AspNetCore.Components.Server.BasicTheme;
-using Volo.Abp.AspNetCore.Components.Server.BasicTheme.Bundling;
-using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
-using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.AspNetCore.Mvc.Localization;
-using Volo.Abp.AspNetCore.Mvc.UI;
-using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap;
-using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
-using Volo.Abp.AspNetCore.Serilog;
-using Volo.Abp.Autofac;
-using Volo.Abp.AutoMapper;
-using Volo.Abp.Identity.Blazor.Server;
-using Volo.Abp.Localization;
-using Volo.Abp.Modularity;
-using Volo.Abp.SettingManagement.Blazor.Server;
-using Volo.Abp.Swashbuckle;
-using Volo.Abp.TenantManagement.Blazor.Server;
-using Volo.Abp.UI;
-using Volo.Abp.UI.Navigation;
-using Volo.Abp.UI.Navigation.Urls;
-using Volo.Abp.VirtualFileSystem;
-
-namespace GroceryStore.Blazor
+﻿namespace GroceryStore.Blazor
 {
+    using System;
+    using System.IO;
+    using System.Net.Http;
+    using Blazorise.Bootstrap;
+    using Blazorise.Icons.FontAwesome;
+    using GroceryStore.Blazor.Menus;
+    using GroceryStore.EntityFrameworkCore;
+    using GroceryStore.Localization;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.OpenApi.Models;
+    using Volo.Abp;
+    using Volo.Abp.Account.Web;
+    using Volo.Abp.AspNetCore.Authentication.JwtBearer;
+    using Volo.Abp.AspNetCore.Components.Server.BasicTheme;
+    using Volo.Abp.AspNetCore.Components.Server.BasicTheme.Bundling;
+    using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
+    using Volo.Abp.AspNetCore.Mvc;
+    using Volo.Abp.AspNetCore.Mvc.Localization;
+    using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
+    using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
+    using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling;
+    using Volo.Abp.AspNetCore.Serilog;
+    using Volo.Abp.Autofac;
+    using Volo.Abp.AutoMapper;
+    using Volo.Abp.Identity.Blazor.Server;
+    using Volo.Abp.Localization;
+    using Volo.Abp.Modularity;
+    using Volo.Abp.SettingManagement.Blazor.Server;
+    using Volo.Abp.Swashbuckle;
+    using Volo.Abp.TenantManagement.Blazor.Server;
+    using Volo.Abp.UI.Navigation;
+    using Volo.Abp.UI.Navigation.Urls;
+    using Volo.Abp.VirtualFileSystem;
+
+    /// <summary>
+	/// Defines the <see cref="GroceryStoreBlazorModule" />.
+	/// </summary>
     [DependsOn(
         typeof(GroceryStoreApplicationModule),
         typeof(GroceryStoreEntityFrameworkCoreDbMigrationsModule),
@@ -61,6 +58,10 @@ namespace GroceryStore.Blazor
     )]
     public class GroceryStoreBlazorModule : AbpModule
     {
+        /// <summary>
+		/// The PreConfigureServices.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(
@@ -78,6 +79,10 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureServices.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             var hostingEnvironment = context.Services.GetHostingEnvironment();
@@ -97,6 +102,10 @@ namespace GroceryStore.Blazor
             ConfigureMenu(context);
         }
 
+        /// <summary>
+		/// The ConfigureUrls.
+		/// </summary>
+		/// <param name="configuration">The configuration<see cref="IConfiguration"/>.</param>
         private void ConfigureUrls(IConfiguration configuration)
         {
             Configure<AppUrlOptions>(
@@ -107,6 +116,9 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureBundles.
+		/// </summary>
         private void ConfigureBundles()
         {
             Configure<AbpBundlingOptions>(
@@ -135,6 +147,11 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureAuthentication.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
+		/// <param name="configuration">The configuration<see cref="IConfiguration"/>.</param>
         private void ConfigureAuthentication(
             ServiceConfigurationContext context,
             IConfiguration configuration
@@ -152,6 +169,10 @@ namespace GroceryStore.Blazor
                 );
         }
 
+        /// <summary>
+		/// The ConfigureVirtualFileSystem.
+		/// </summary>
+		/// <param name="hostingEnvironment">The hostingEnvironment<see cref="IWebHostEnvironment"/>.</param>
         private void ConfigureVirtualFileSystem(IWebHostEnvironment hostingEnvironment)
         {
             if (hostingEnvironment.IsDevelopment())
@@ -191,6 +212,9 @@ namespace GroceryStore.Blazor
             }
         }
 
+        /// <summary>
+		/// The ConfigureLocalizationServices.
+		/// </summary>
         private void ConfigureLocalizationServices()
         {
             Configure<AbpLocalizationOptions>(
@@ -213,6 +237,10 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureSwaggerServices.
+		/// </summary>
+		/// <param name="services">The services<see cref="IServiceCollection"/>.</param>
         private void ConfigureSwaggerServices(IServiceCollection services)
         {
             services.AddSwaggerGen(
@@ -228,16 +256,28 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureHttpClient.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         private static void ConfigureHttpClient(ServiceConfigurationContext context)
         {
             context.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri("/") });
         }
 
+        /// <summary>
+		/// The ConfigureBlazorise.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         private void ConfigureBlazorise(ServiceConfigurationContext context)
         {
             context.Services.AddBootstrapProviders().AddFontAwesomeIcons();
         }
 
+        /// <summary>
+		/// The ConfigureMenu.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         private void ConfigureMenu(ServiceConfigurationContext context)
         {
             Configure<AbpNavigationOptions>(
@@ -248,6 +288,10 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureRouter.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         private void ConfigureRouter(ServiceConfigurationContext context)
         {
             Configure<AbpRouterOptions>(
@@ -258,6 +302,9 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureAutoApiControllers.
+		/// </summary>
         private void ConfigureAutoApiControllers()
         {
             Configure<AbpAspNetCoreMvcOptions>(
@@ -270,6 +317,9 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The ConfigureAutoMapper.
+		/// </summary>
         private void ConfigureAutoMapper()
         {
             Configure<AbpAutoMapperOptions>(
@@ -280,6 +330,10 @@ namespace GroceryStore.Blazor
             );
         }
 
+        /// <summary>
+		/// The OnApplicationInitialization.
+		/// </summary>
+		/// <param name="context">The context<see cref="ApplicationInitializationContext"/>.</param>
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             var env = context.GetEnvironment();

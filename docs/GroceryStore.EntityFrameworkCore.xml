@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.EntityFrameworkCore</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.EntityFrameworkCore.GroceryStoreDbContext">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreDbContext" />.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.EntityFrameworkCore.GroceryStoreDbContext.Users">
+            <summary>
+            Gets or sets the Users.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.EntityFrameworkCore.GroceryStoreDbContext.Customers">
+            <summary>
+            Gets or sets the Customers.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{GroceryStore.EntityFrameworkCore.GroceryStoreDbContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreDbContext"/> class.
+            </summary>
+            <param name="options">The options<see cref="T:Microsoft.EntityFrameworkCore.DbContextOptions`1"/>.</param>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            The OnModelCreating.
+            </summary>
+            <param name="builder">The builder<see cref="T:Microsoft.EntityFrameworkCore.ModelBuilder"/>.</param>
+        </member>
+        <member name="T:GroceryStore.EntityFrameworkCore.GroceryStoreDbContextModelCreatingExtensions">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreDbContextModelCreatingExtensions" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreDbContextModelCreatingExtensions.ConfigureGroceryStore(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            The ConfigureGroceryStore.
+            </summary>
+            <param name="builder">The builder<see cref="T:Microsoft.EntityFrameworkCore.ModelBuilder"/>.</param>
+        </member>
+        <member name="T:GroceryStore.EntityFrameworkCore.GroceryStoreEfCoreEntityExtensionMappings">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreEfCoreEntityExtensionMappings" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.EntityFrameworkCore.GroceryStoreEfCoreEntityExtensionMappings.OneTimeRunner">
+            <summary>
+            Defines the OneTimeRunner.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreEfCoreEntityExtensionMappings.Configure">
+            <summary>
+            The Configure.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.EntityFrameworkCore.GroceryStoreEntityFrameworkCoreModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.EntityFrameworkCore.GroceryStoreEntityFrameworkCoreModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreEntityFrameworkCoreModule.PreConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The PreConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="M:GroceryStore.EntityFrameworkCore.GroceryStoreEntityFrameworkCoreModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+    </members>
+</doc>

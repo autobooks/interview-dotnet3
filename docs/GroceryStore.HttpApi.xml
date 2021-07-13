@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.HttpApi</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.Controllers.GroceryStoreController">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Controllers.GroceryStoreController" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Controllers.GroceryStoreController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.Controllers.GroceryStoreController"/> class.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreHttpApiModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreHttpApiModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreHttpApiModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreHttpApiModule.ConfigureLocalization">
+            <summary>
+            The ConfigureLocalization.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.Models.Test.TestModel">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Models.Test.TestModel" />.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Models.Test.TestModel.Name">
+            <summary>
+            Gets or sets the Name.
+            </summary>
+        </member>
+        <member name="P:GroceryStore.Models.Test.TestModel.BirthDate">
+            <summary>
+            Gets or sets the BirthDate.
+            </summary>
+        </member>
+    </members>
+</doc>

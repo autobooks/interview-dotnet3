@@ -1,22 +1,29 @@
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Serilog;
-using Serilog.Events;
-
 namespace GroceryStore.DbMigrator
 {
-    class Program
+    using System.Threading.Tasks;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
+    using Serilog;
+    using Serilog.Events;
+
+    /// <summary>
+	/// Defines the <see cref="Program" />.
+	/// </summary>
+    internal class Program
     {
-        static async Task Main(string[] args)
+        /// <summary>
+		/// The Main.
+		/// </summary>
+		/// <param name="args">The args<see cref="string[]"/>.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+        internal static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration().MinimumLevel.Information()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .MinimumLevel.Override("Volo.Abp", LogEventLevel.Warning)
 #if DEBUG
-                .MinimumLevel.Override("GroceryStore", LogEventLevel.Debug)
+				.MinimumLevel.Override("GroceryStore", LogEventLevel.Debug)
 #else
                 .MinimumLevel.Override("GroceryStore", LogEventLevel.Information)
 #endif
@@ -28,6 +35,11 @@ namespace GroceryStore.DbMigrator
             await CreateHostBuilder(args).RunConsoleAsync();
         }
 
+        /// <summary>
+		/// The CreateHostBuilder.
+		/// </summary>
+		/// <param name="args">The args<see cref="string[]"/>.</param>
+		/// <returns>The <see cref="IHostBuilder"/>.</returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureLogging((context, logging) => logging.ClearProviders())

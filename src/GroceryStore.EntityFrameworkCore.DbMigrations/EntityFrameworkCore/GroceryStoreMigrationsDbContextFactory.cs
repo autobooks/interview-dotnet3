@@ -1,15 +1,24 @@
-﻿using System.IO;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
-
-namespace GroceryStore.EntityFrameworkCore
+﻿namespace GroceryStore.EntityFrameworkCore
 {
+    using System.IO;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Design;
+    using Microsoft.Extensions.Configuration;
+
     /* This class is needed for EF Core console commands
      * (like Add-Migration and Update-Database commands) */
+
+    /// <summary>
+    /// Defines the <see cref="GroceryStoreMigrationsDbContextFactory" />.
+    /// </summary>
     public class GroceryStoreMigrationsDbContextFactory
         : IDesignTimeDbContextFactory<GroceryStoreMigrationsDbContext>
     {
+        /// <summary>
+        /// The CreateDbContext.
+        /// </summary>
+        /// <param name="args">The args<see cref="string[]"/>.</param>
+        /// <returns>The <see cref="GroceryStoreMigrationsDbContext"/>.</returns>
         public GroceryStoreMigrationsDbContext CreateDbContext(string[] args)
         {
             GroceryStoreEfCoreEntityExtensionMappings.Configure();
@@ -24,6 +33,10 @@ namespace GroceryStore.EntityFrameworkCore
             return new GroceryStoreMigrationsDbContext(builder.Options);
         }
 
+        /// <summary>
+        /// The BuildConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IConfigurationRoot"/>.</returns>
         private static IConfigurationRoot BuildConfiguration()
         {
             var builder = new ConfigurationBuilder().SetBasePath(

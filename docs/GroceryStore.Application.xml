@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.Application</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.Customers.CustomerAppService">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Customers.CustomerAppService" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService.#ctor(Volo.Abp.Domain.Repositories.IRepository{GroceryStore.Customers.Customer,System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.Customers.CustomerAppService"/> class.
+            </summary>
+            <param name="repository">The repository<see cref="T:Volo.Abp.Domain.Repositories.IRepository`2"/>.</param>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreApplicationAutoMapperProfile">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreApplicationAutoMapperProfile" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreApplicationAutoMapperProfile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.GroceryStoreApplicationAutoMapperProfile"/> class.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreApplicationModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreApplicationModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreApplicationModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreAppService">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreAppService" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreAppService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.GroceryStoreAppService"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.Domain.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.GroceryStoreDomainErrorCodes">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreDomainErrorCodes" />.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreDomainSharedModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreDomainSharedModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreDomainSharedModule.PreConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The PreConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreDomainSharedModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The ConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreGlobalFeatureConfigurator">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreGlobalFeatureConfigurator" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.GroceryStoreGlobalFeatureConfigurator.OneTimeRunner">
+            <summary>
+            Defines the OneTimeRunner.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreGlobalFeatureConfigurator.Configure">
+            <summary>
+            The Configure.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.GroceryStoreModuleExtensionConfigurator">
+            <summary>
+            Defines the <see cref="T:GroceryStore.GroceryStoreModuleExtensionConfigurator" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.GroceryStoreModuleExtensionConfigurator.OneTimeRunner">
+            <summary>
+            Defines the OneTimeRunner.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreModuleExtensionConfigurator.Configure">
+            <summary>
+            The Configure.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreModuleExtensionConfigurator.ConfigureExistingProperties">
+            <summary>
+            The ConfigureExistingProperties.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.GroceryStoreModuleExtensionConfigurator.ConfigureExtraProperties">
+            <summary>
+            The ConfigureExtraProperties.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.Localization.GroceryStoreResource">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Localization.GroceryStoreResource" />.
+            </summary>
+        </member>
+        <member name="T:GroceryStore.MultiTenancy.MultiTenancyConsts">
+            <summary>
+            Defines the <see cref="T:GroceryStore.MultiTenancy.MultiTenancyConsts" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.MultiTenancy.MultiTenancyConsts.IsEnabled">
+            <summary>
+            Defines the IsEnabled.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,14 +1,17 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Account;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
-using Volo.Abp.Modularity;
-using Volo.Abp.PermissionManagement;
-using Volo.Abp.TenantManagement;
-using Volo.Abp.SettingManagement;
-
-namespace GroceryStore
+﻿namespace GroceryStore
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using Volo.Abp.Account;
+    using Volo.Abp.FeatureManagement;
+    using Volo.Abp.Identity;
+    using Volo.Abp.Modularity;
+    using Volo.Abp.PermissionManagement;
+    using Volo.Abp.SettingManagement;
+    using Volo.Abp.TenantManagement;
+
+    /// <summary>
+	/// Defines the <see cref="GroceryStoreHttpApiClientModule" />.
+	/// </summary>
     [DependsOn(
         typeof(GroceryStoreApplicationContractsModule),
         typeof(AbpAccountHttpApiClientModule),
@@ -20,8 +23,15 @@ namespace GroceryStore
     )]
     public class GroceryStoreHttpApiClientModule : AbpModule
     {
+        /// <summary>
+		/// Defines the RemoteServiceName.
+		/// </summary>
         public const string RemoteServiceName = "Default";
 
+        /// <summary>
+		/// The ConfigureServices.
+		/// </summary>
+		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.AddHttpClientProxies(
