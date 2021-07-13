@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>GroceryStore</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\GroceryStore.EntityFrameworkCore.DbMigrations\GroceryStore.EntityFrameworkCore.DbMigrations.csproj" />
+    <ProjectReference Include="..\GroceryStore.TestBase\GroceryStore.TestBase.csproj" />
+    <PackageReference Include="CSharpier.MsBuild" Version="0.9.7" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="4.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+  </ItemGroup>
+
+</Project>
