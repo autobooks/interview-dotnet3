@@ -43,7 +43,7 @@
 
             var x = AppDomain.CurrentDomain.BaseDirectory;
             using var sRdr = new StreamReader(
-                AppDomain.CurrentDomain.BaseDirectory + @"\Properties\database.json"
+                AppDomain.CurrentDomain.BaseDirectory + @"\database.json"
             );
             var text = sRdr.ReadToEnd();
             var customers = JObject.Parse(text)
