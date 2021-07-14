@@ -117,9 +117,6 @@ dotnet_diagnostic.CS1584.severity = none
 dotnet_diagnostic.CS1658.severity = none
 
 
-# CS0436: Type conflicts with imported type
-dotnet_diagnostic.CS0436.severity = error
-
 # IDE0090: Use 'new(...)'
 dotnet_diagnostic.IDE0090.severity = none
 
@@ -128,3 +125,6 @@ dotnet_diagnostic.IDE0036.severity = none
 
 # IDE0051: Remove unused private members
 dotnet_diagnostic.IDE0051.severity = none
+
+# CS0436: Warning is overriding an error
+dotnet_diagnostic.CS0436.severity = none

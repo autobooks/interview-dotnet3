@@ -10,8 +10,8 @@
     using Volo.Abp.TenantManagement;
 
     /// <summary>
-	/// Defines the <see cref="GroceryStoreHttpApiClientModule" />.
-	/// </summary>
+    /// Defines the <see cref="GroceryStoreHttpApiClientModule" />.
+    /// </summary>
     [DependsOn(
         typeof(GroceryStoreApplicationContractsModule),
         typeof(AbpAccountHttpApiClientModule),
@@ -24,14 +24,14 @@
     public class GroceryStoreHttpApiClientModule : AbpModule
     {
         /// <summary>
-		/// Defines the RemoteServiceName.
-		/// </summary>
+        /// Defines the RemoteServiceName.
+        /// </summary>
         public const string RemoteServiceName = "Default";
 
         /// <summary>
-		/// The ConfigureServices.
-		/// </summary>
-		/// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
+        /// The ConfigureServices.
+        /// </summary>
+        /// <param name="context">The context<see cref="ServiceConfigurationContext"/>.</param>
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.AddHttpClientProxies(
