@@ -14,3 +14,6 @@ Implement the above listed requirements in a manner you see fitting.  Demonstrat
 
 # Publish
 Publish your implementation under your own github account.
+
+
+# Testing pipeline
