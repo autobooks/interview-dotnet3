@@ -16,7 +16,7 @@
         </member>
         <member name="F:GroceryStore.Customers.CustomerAppService_Tests._repo">
             <summary>
-            CustomerRepo the _repo..
+            CustomerRepo the _repo...
             </summary>
         </member>
         <member name="F:GroceryStore.Customers.CustomerAppService_Tests._guidGenerator">
@@ -90,6 +90,13 @@
             The Should_Not_Delete_Invalid_Customer.
             Delete does not return anything when valid or invalid.
             TBO I've always thrown an exception when trying to delete that which doesnt exist. But apparently this is the industry standard.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_fail_with_user_friendly_message">
+            <summary>
+            The Should_fail_with_user_friendly_message.
+            This is what that method was made for.
             </summary>
             <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
         </member>

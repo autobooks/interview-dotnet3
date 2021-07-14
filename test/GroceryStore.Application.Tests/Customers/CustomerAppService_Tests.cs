@@ -24,7 +24,7 @@
         private readonly ICustomerAppService _customerAppService;
 
         /// <summary>
-        /// CustomerRepo the _repo..
+        /// CustomerRepo the _repo...
         /// </summary>
         private readonly IRepository<Customer, Guid> _repo;
 
@@ -231,21 +231,21 @@
                 .ShouldBeTrue();
         }
 
+        /// <summary>
+        /// The Should_fail_with_user_friendly_message.
+        /// This is what that method was made for.
+        /// </summary>
+        /// <returns>The <see cref="Task"/>.</returns>
         [Fact]
         public async Task Should_fail_with_user_friendly_message()
         {
             var friendlyException = await Assert.ThrowsAsync<UserFriendlyException>(
                 async () =>
                 {
-                    var longName = new EditCustomerDto
-                    {
-                        LegacyId = 5,
-                        Name =
-                            "0bnvp39wtc08noecmwsr8ng15sqv4fw0qe6dttmut4rgicfbqf5uokqjd33emhnvtkd5sw2qe9olp7th4i0px2zrvptcu8zohskniwoiygxgifijwr7do0jmdmsp68woo07pv5mbxxsue1b2cmgmy444n1tnk0umatd9wvf0xkm843i4id1a1sic5btaar4mmw88k2saoxvyccjzxhiqfylvuah5awn1gooir5uyx6qj6hf1pr6gz7mhlxb0k6o7dxlkfh1h11p0m5nkpckowstiw04m17ls6mmupw5mrya8s"
-                    };
-                    await _customerAppService.CreateAsync(longName);
+                    await _customerAppService.ThisWillFailGracefullly();
                 }
             );
+            friendlyException.Message.ShouldContain("snoop", Case.Insensitive);
         }
     }
 }
