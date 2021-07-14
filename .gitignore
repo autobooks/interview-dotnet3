@@ -260,3 +260,6 @@ src/GroceryStore.HttpApi.HostWithIds/Logs/*
 src/GroceryStore.DbMigrator/Logs/*
 src/GroceryStore.Blazor/Logs/*
 src/GroceryStore.Blazor.Tiered/Logs/*
+
+# Any logs not already covered
+**Logs.txt
