@@ -15,7 +15,7 @@
 		/// <param name="context">The context<see cref="IPermissionDefinitionContext"/>.</param>
         public override void Define(IPermissionDefinitionContext context)
         {
-            var myGroup = context.AddGroup(GroceryStorePermissions.GroupName);
+            context.AddGroup(GroceryStorePermissions.GroupName);
         }
 
         /// <summary>

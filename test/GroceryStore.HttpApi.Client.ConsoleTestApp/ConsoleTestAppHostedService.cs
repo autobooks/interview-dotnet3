@@ -1,7 +1,7 @@
-using Microsoft.Extensions.Hosting;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Volo.Abp;
 
 namespace GroceryStore.HttpApi.Client.ConsoleTestApp

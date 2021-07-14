@@ -2,9 +2,6 @@
 # You can modify the rules from these initially generated values to suit your own policies
 # You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
 
-root = true
-
-
 #ignore generated files
 [**.g.cs]
 charset = unset
@@ -102,7 +99,7 @@ dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggest
 #Style - Modifier preferences
 
 #when this rule is set to a list of modifiers, prefer the specified ordering.
-csharp_preferred_modifier_order = public,private,protected,readonly,override,async,static,virtual,abstract:suggestion
+csharp_preferred_modifier_order = public,private,protected,readonly,override,async,static,virtual,abstract:none
 
 #Style - qualification options
 
@@ -119,3 +116,15 @@ dotnet_diagnostic.CS1584.severity = none
 # CS1658: Warning is overriding an error
 dotnet_diagnostic.CS1658.severity = none
 
+
+# CS0436: Type conflicts with imported type
+dotnet_diagnostic.CS0436.severity = error
+
+# IDE0090: Use 'new(...)'
+dotnet_diagnostic.IDE0090.severity = none
+
+# IDE0036: Order modifiers
+dotnet_diagnostic.IDE0036.severity = none
+
+# IDE0051: Remove unused private members
+dotnet_diagnostic.IDE0051.severity = none

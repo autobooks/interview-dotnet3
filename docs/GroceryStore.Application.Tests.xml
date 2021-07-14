@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GroceryStore.Application.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:GroceryStore.Customers.CustomerAppService_Tests">
+            <summary>
+            Defines the <see cref="T:GroceryStore.Customers.CustomerAppService_Tests" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Customers.CustomerAppService_Tests._customerAppService">
+            <summary>
+            Defines the _customerAppService.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Customers.CustomerAppService_Tests._repo">
+            <summary>
+            CustomerRepo the _repo..
+            </summary>
+        </member>
+        <member name="F:GroceryStore.Customers.CustomerAppService_Tests._guidGenerator">
+            <summary>
+            Defines the _guidGenerator.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.Customers.CustomerAppService_Tests"/> class.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Return_Seeded_Customers">
+            <summary>
+            The Should_Return_Seeded_
+            3 customers where seeded. See GroceryStore.CustomerDataSeedContributor.
+            One of those customers is named Bob.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Create_Valid_Customer">
+            <summary>
+            The Should_Create_Valid_Customer.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Not_Create_Invalid_Customer_DB_Constraints">
+            <summary>
+            Should_Not_Create_Invalid_Customer_DB_Constraints.
+            Legacy Id is ak and must unique.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Not_Create_Invalid_Customer_Model_Validation">
+            <summary>
+            The Should_Not_Create_Invalid_Customer_Model_Validation.
+            Name must be under 128 char.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Update_Valid_Customer">
+            <summary>
+            The Should_Update_Valid_Customer.
+            Changing bobs name is valid.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Not_Update_Invalid_Customer_DB_Constraints">
+            <summary>
+            The Should_Not_Update_Invalid_Customer_DB_Constraints.
+            Bob cannot re-use Mary's LegacyId.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Not_Update_Invalid_Customer_Model_Validation">
+            <summary>
+            The Should_Not_Update_Invalid_Customer_Model_Validation.
+            Bob cannot change his name to be a cryptographic hash.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Delete_Valid_Customer">
+            <summary>
+            The Should_Delete_Valid_Customer.
+            Bob is a valid customer, it is valid to delete him.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService_Tests.Should_Not_Delete_Invalid_Customer">
+            <summary>
+            The Should_Not_Delete_Invalid_Customer.
+            Delete does not return anything when valid or invalid.
+            TBO I've always thrown an exception when trying to delete that which doesnt exist. But apparently this is the industry standard.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+    </members>
+</doc>

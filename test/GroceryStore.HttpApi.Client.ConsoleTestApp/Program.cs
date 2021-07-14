@@ -4,9 +4,9 @@ using Microsoft.Extensions.Hosting;
 
 namespace GroceryStore.HttpApi.Client.ConsoleTestApp
 {
-    class Program
+    internal class Program
     {
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             await CreateHostBuilder(args).RunConsoleAsync();
         }

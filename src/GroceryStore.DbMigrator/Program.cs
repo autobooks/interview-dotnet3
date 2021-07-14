@@ -23,7 +23,7 @@ namespace GroceryStore.DbMigrator
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .MinimumLevel.Override("Volo.Abp", LogEventLevel.Warning)
 #if DEBUG
-				.MinimumLevel.Override("GroceryStore", LogEventLevel.Debug)
+                .MinimumLevel.Override("GroceryStore", LogEventLevel.Debug)
 #else
                 .MinimumLevel.Override("GroceryStore", LogEventLevel.Information)
 #endif
@@ -40,8 +40,9 @@ namespace GroceryStore.DbMigrator
 		/// </summary>
 		/// <param name="args">The args<see cref="string[]"/>.</param>
 		/// <returns>The <see cref="IHostBuilder"/>.</returns>
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureLogging((context, logging) => logging.ClearProviders())
                 .ConfigureServices(
                     (hostContext, services) =>
@@ -49,5 +50,6 @@ namespace GroceryStore.DbMigrator
                         services.AddHostedService<DbMigratorHostedService>();
                     }
                 );
+        }
     }
 }

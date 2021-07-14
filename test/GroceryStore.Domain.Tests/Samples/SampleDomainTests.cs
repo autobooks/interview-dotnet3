@@ -10,6 +10,7 @@ namespace GroceryStore.Samples
      * (like IdentityUserManager here).
      * Only test your own domain services.
      */
+
     public class SampleDomainTests : GroceryStoreDomainTestBase
     {
         private readonly IIdentityUserRepository _identityUserRepository;

@@ -4,7 +4,6 @@
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-    using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using Volo.Abp.Data;
     using Volo.Abp.DependencyInjection;
@@ -38,22 +37,21 @@
         {
             // if this has already been populated, ignore
             if (await _customerRepo.GetCountAsync() > 0)
+            {
                 return;
+            }
 
             var x = AppDomain.CurrentDomain.BaseDirectory;
-            using (
-                StreamReader sRdr = new StreamReader(
-                    AppDomain.CurrentDomain.BaseDirectory + @"\Properties\database.json"
-                )
-            ) {
-                string text = sRdr.ReadToEnd();
-                var customers = JObject.Parse(text)
-                    .SelectToken("customers")
-                    .ToObject<dynamic[]>()
-                    .Select(c => new Customer { LegacyId = c.id, Name = c.name });
+            using var sRdr = new StreamReader(
+                AppDomain.CurrentDomain.BaseDirectory + @"\Properties\database.json"
+            );
+            var text = sRdr.ReadToEnd();
+            var customers = JObject.Parse(text)
+                .SelectToken("customers")
+                .ToObject<dynamic[]>()
+                .Select(c => new Customer { LegacyId = c.id, Name = c.name });
 
-                await _customerRepo.InsertManyAsync(customers);
-            }
+            await _customerRepo.InsertManyAsync(customers);
         }
     }
 }

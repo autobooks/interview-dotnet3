@@ -34,24 +34,21 @@
 		/// <returns>The <see cref="Task"/>.</returns>
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            using (
-                var application = AbpApplicationFactory.Create<GroceryStoreDbMigratorModule>(
-                    options =>
-                    {
-                        options.UseAutofac();
-                        options.Services.AddLogging(c => c.AddSerilog());
-                    }
-                )
-            ) {
-                application.Initialize();
+            using var application = AbpApplicationFactory.Create<GroceryStoreDbMigratorModule>(
+                options =>
+                {
+                    options.UseAutofac();
+                    options.Services.AddLogging(c => c.AddSerilog());
+                }
+            );
+            application.Initialize();
 
-                await application.ServiceProvider.GetRequiredService<GroceryStoreDbMigrationService>()
-                    .MigrateAsync();
+            await application.ServiceProvider.GetRequiredService<GroceryStoreDbMigrationService>()
+                .MigrateAsync();
 
-                application.Shutdown();
+            application.Shutdown();
 
-                _hostApplicationLifetime.StopApplication();
-            }
+            _hostApplicationLifetime.StopApplication();
         }
 
         /// <summary>
@@ -59,6 +56,9 @@
 		/// </summary>
 		/// <param name="cancellationToken">The cancellationToken<see cref="CancellationToken"/>.</param>
 		/// <returns>The <see cref="Task"/>.</returns>
-        public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
+        public Task StopAsync(CancellationToken cancellationToken)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

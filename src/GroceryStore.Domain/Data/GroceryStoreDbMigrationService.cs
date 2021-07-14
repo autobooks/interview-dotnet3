@@ -16,42 +16,42 @@
     using Volo.Abp.TenantManagement;
 
     /// <summary>
-	/// Defines the <see cref="GroceryStoreDbMigrationService" />.
-	/// </summary>
+    /// Defines the <see cref="GroceryStoreDbMigrationService" />.
+    /// </summary>
     public class GroceryStoreDbMigrationService : ITransientDependency
     {
         /// <summary>
-		/// Gets or sets the Logger.
-		/// </summary>
+        /// Gets or sets the Logger.
+        /// </summary>
         public ILogger<GroceryStoreDbMigrationService> Logger { get; set; }
 
         /// <summary>
-		/// Defines the _dataSeeder.
-		/// </summary>
+        /// Defines the _dataSeeder.
+        /// </summary>
         private readonly IDataSeeder _dataSeeder;
 
         /// <summary>
-		/// Defines the _dbSchemaMigrators.
-		/// </summary>
+        /// Defines the _dbSchemaMigrators.
+        /// </summary>
         private readonly IEnumerable<IGroceryStoreDbSchemaMigrator> _dbSchemaMigrators;
 
         /// <summary>
-		/// Defines the _tenantRepository.
-		/// </summary>
+        /// Defines the _tenantRepository.
+        /// </summary>
         private readonly ITenantRepository _tenantRepository;
 
         /// <summary>
-		/// Defines the _currentTenant.
-		/// </summary>
+        /// Defines the _currentTenant.
+        /// </summary>
         private readonly ICurrentTenant _currentTenant;
 
         /// <summary>
-		/// Initializes a new instance of the <see cref="GroceryStoreDbMigrationService"/> class.
-		/// </summary>
-		/// <param name="dataSeeder">The dataSeeder<see cref="IDataSeeder"/>.</param>
-		/// <param name="dbSchemaMigrators">The dbSchemaMigrators<see cref="IEnumerable{IGroceryStoreDbSchemaMigrator}"/>.</param>
-		/// <param name="tenantRepository">The tenantRepository<see cref="ITenantRepository"/>.</param>
-		/// <param name="currentTenant">The currentTenant<see cref="ICurrentTenant"/>.</param>
+        /// Initializes a new instance of the <see cref="GroceryStoreDbMigrationService"/> class.
+        /// </summary>
+        /// <param name="dataSeeder">The dataSeeder<see cref="IDataSeeder"/>.</param>
+        /// <param name="dbSchemaMigrators">The dbSchemaMigrators<see cref="IEnumerable{IGroceryStoreDbSchemaMigrator}"/>.</param>
+        /// <param name="tenantRepository">The tenantRepository<see cref="ITenantRepository"/>.</param>
+        /// <param name="currentTenant">The currentTenant<see cref="ICurrentTenant"/>.</param>
         public GroceryStoreDbMigrationService(
             IDataSeeder dataSeeder,
             IEnumerable<IGroceryStoreDbSchemaMigrator> dbSchemaMigrators,
@@ -67,9 +67,9 @@
         }
 
         /// <summary>
-		/// The MigrateAsync.
-		/// </summary>
-		/// <returns>The <see cref="Task"/>.</returns>
+        /// The MigrateAsync.
+        /// </summary>
+        /// <returns>The <see cref="Task"/>.</returns>
         public async Task MigrateAsync()
         {
             var initialMigrationAdded = AddInitialMigrationIfNotExist();
@@ -119,10 +119,10 @@
         }
 
         /// <summary>
-		/// The MigrateDatabaseSchemaAsync.
-		/// </summary>
-		/// <param name="tenant">The tenant<see cref="Tenant"/>.</param>
-		/// <returns>The <see cref="Task"/>.</returns>
+        /// The MigrateDatabaseSchemaAsync.
+        /// </summary>
+        /// <param name="tenant">The tenant<see cref="Tenant"/>.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
         private async Task MigrateDatabaseSchemaAsync(Tenant tenant = null)
         {
             Logger.LogInformation(
@@ -136,10 +136,10 @@
         }
 
         /// <summary>
-		/// The SeedDataAsync.
-		/// </summary>
-		/// <param name="tenant">The tenant<see cref="Tenant"/>.</param>
-		/// <returns>The <see cref="Task"/>.</returns>
+        /// The SeedDataAsync.
+        /// </summary>
+        /// <param name="tenant">The tenant<see cref="Tenant"/>.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
         private async Task SeedDataAsync(Tenant tenant = null)
         {
             Logger.LogInformation(
@@ -159,9 +159,9 @@
         }
 
         /// <summary>
-		/// The AddInitialMigrationIfNotExist.
-		/// </summary>
-		/// <returns>The <see cref="bool"/>.</returns>
+        /// The AddInitialMigrationIfNotExist.
+        /// </summary>
+        /// <returns>The <see cref="bool"/>.</returns>
         private bool AddInitialMigrationIfNotExist()
         {
             try
@@ -196,10 +196,10 @@
         }
 
         /// <summary>
-		/// The DbMigrationsProjectExists.
-		/// </summary>
-		/// <returns>The <see cref="bool"/>.</returns>
-        private bool DbMigrationsProjectExists()
+        /// The DbMigrationsProjectExists.
+        /// </summary>
+        /// <returns>The <see cref="bool"/>.</returns>
+        private static bool DbMigrationsProjectExists()
         {
             var dbMigrationsProjectFolder = GetDbMigrationsProjectFolderPath();
 
@@ -207,10 +207,10 @@
         }
 
         /// <summary>
-		/// The MigrationsFolderExists.
-		/// </summary>
-		/// <returns>The <see cref="bool"/>.</returns>
-        private bool MigrationsFolderExists()
+        /// The MigrationsFolderExists.
+        /// </summary>
+        /// <returns>The <see cref="bool"/>.</returns>
+        private static bool MigrationsFolderExists()
         {
             var dbMigrationsProjectFolder = GetDbMigrationsProjectFolderPath();
 
@@ -218,8 +218,8 @@
         }
 
         /// <summary>
-		/// The AddInitialMigration.
-		/// </summary>
+        /// The AddInitialMigration.
+        /// </summary>
         private void AddInitialMigration()
         {
             Logger.LogInformation("Creating initial migration...");
@@ -256,10 +256,10 @@
         }
 
         /// <summary>
-		/// The GetDbMigrationsProjectFolderPath.
-		/// </summary>
-		/// <returns>The <see cref="string"/>.</returns>
-        private string GetDbMigrationsProjectFolderPath()
+        /// The GetDbMigrationsProjectFolderPath.
+        /// </summary>
+        /// <returns>The <see cref="string"/>.</returns>
+        private static string GetDbMigrationsProjectFolderPath()
         {
             var slnDirectoryPath = GetSolutionDirectoryPath();
 
@@ -275,10 +275,10 @@
         }
 
         /// <summary>
-		/// The GetSolutionDirectoryPath.
-		/// </summary>
-		/// <returns>The <see cref="string"/>.</returns>
-        private string GetSolutionDirectoryPath()
+        /// The GetSolutionDirectoryPath.
+        /// </summary>
+        /// <returns>The <see cref="string"/>.</returns>
+        private static string GetSolutionDirectoryPath()
         {
             var currentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
 

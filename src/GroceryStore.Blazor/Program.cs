@@ -20,7 +20,7 @@ namespace GroceryStore.Blazor
         {
             Log.Logger = new LoggerConfiguration()
 #if DEBUG
-				.MinimumLevel.Debug()
+                .MinimumLevel.Debug()
 #else
             .MinimumLevel.Information()
 #endif
@@ -29,7 +29,7 @@ namespace GroceryStore.Blazor
                 .Enrich.FromLogContext()
                 .WriteTo.Async(c => c.File("Logs/logs.txt"))
 #if DEBUG
-				.WriteTo.Async(c => c.Console())
+                .WriteTo.Async(c => c.Console())
 #endif
                 .CreateLogger();
 

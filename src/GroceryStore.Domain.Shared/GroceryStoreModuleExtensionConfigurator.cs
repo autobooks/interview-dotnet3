@@ -3,18 +3,18 @@
     using Volo.Abp.Threading;
 
     /// <summary>
-	/// Defines the <see cref="GroceryStoreModuleExtensionConfigurator" />.
-	/// </summary>
+    /// Defines the <see cref="GroceryStoreModuleExtensionConfigurator" />.
+    /// </summary>
     public static class GroceryStoreModuleExtensionConfigurator
     {
         /// <summary>
-		/// Defines the OneTimeRunner.
-		/// </summary>
+        /// Defines the OneTimeRunner.
+        /// </summary>
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
 
         /// <summary>
-		/// The Configure.
-		/// </summary>
+        /// The Configure.
+        /// </summary>
         public static void Configure()
         {
             OneTimeRunner.Run(
@@ -27,13 +27,13 @@
         }
 
         /// <summary>
-		/// The ConfigureExistingProperties.
-		/// </summary>
+        /// The ConfigureExistingProperties.
+        /// </summary>
         private static void ConfigureExistingProperties() { }
 
         /// <summary>
-		/// The ConfigureExtraProperties.
-		/// </summary>
+        /// The ConfigureExtraProperties.
+        /// </summary>
         private static void ConfigureExtraProperties() { }
     }
 }

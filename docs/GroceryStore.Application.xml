@@ -15,6 +15,14 @@
             </summary>
             <param name="repository">The repository<see cref="T:Volo.Abp.Domain.Repositories.IRepository`2"/>.</param>
         </member>
+        <member name="M:GroceryStore.Customers.CustomerAppService.ThisWillFailGracefullly">
+            <summary>
+            The ThisWillFailGracefullly.
+            This is for demo purposes. Abp implements unit of work around all its methods.
+            Insert is valid. But an exception is thrown. The insert will not be committed.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
         <member name="T:GroceryStore.GroceryStoreApplicationAutoMapperProfile">
             <summary>
             Defines the <see cref="T:GroceryStore.GroceryStoreApplicationAutoMapperProfile" />.

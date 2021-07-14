@@ -3,18 +3,18 @@
     using Volo.Abp.Threading;
 
     /// <summary>
-	/// Defines the <see cref="GroceryStoreEfCoreEntityExtensionMappings" />.
-	/// </summary>
+    /// Defines the <see cref="GroceryStoreEfCoreEntityExtensionMappings" />.
+    /// </summary>
     public static class GroceryStoreEfCoreEntityExtensionMappings
     {
         /// <summary>
-		/// Defines the OneTimeRunner.
-		/// </summary>
+        /// Defines the OneTimeRunner.
+        /// </summary>
         private static readonly OneTimeRunner OneTimeRunner = new OneTimeRunner();
 
         /// <summary>
-		/// The Configure.
-		/// </summary>
+        /// The Configure.
+        /// </summary>
         public static void Configure()
         {
             GroceryStoreGlobalFeatureConfigurator.Configure();

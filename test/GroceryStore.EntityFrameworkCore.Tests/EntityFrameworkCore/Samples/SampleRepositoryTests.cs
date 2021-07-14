@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using GroceryStore.Users;
-using Shouldly;
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using GroceryStore.Users;
+using Microsoft.EntityFrameworkCore;
+using Shouldly;
 using Volo.Abp.Domain.Repositories;
 using Xunit;
 
@@ -14,6 +14,7 @@ namespace GroceryStore.EntityFrameworkCore.Samples
      * (like default AppUser repository IRepository<AppUser, Guid> here).
      * Only test your custom repository methods.
      */
+
     public class SampleRepositoryTests : GroceryStoreEntityFrameworkCoreTestBase
     {
         private readonly IRepository<AppUser, Guid> _appUserRepository;

@@ -21,61 +21,61 @@ namespace GroceryStore.IdentityServer
     using Client = Volo.Abp.IdentityServer.Clients.Client;
 
     /// <summary>
-	/// Defines the <see cref="IdentityServerDataSeedContributor" />.
-	/// </summary>
+    /// Defines the <see cref="IdentityServerDataSeedContributor" />.
+    /// </summary>
     public class IdentityServerDataSeedContributor : IDataSeedContributor, ITransientDependency
     {
         /// <summary>
-		/// Defines the _apiResourceRepository.
-		/// </summary>
+        /// Defines the _apiResourceRepository.
+        /// </summary>
         private readonly IApiResourceRepository _apiResourceRepository;
 
         /// <summary>
-		/// Defines the _apiScopeRepository.
-		/// </summary>
+        /// Defines the _apiScopeRepository.
+        /// </summary>
         private readonly IApiScopeRepository _apiScopeRepository;
 
         /// <summary>
-		/// Defines the _clientRepository.
-		/// </summary>
+        /// Defines the _clientRepository.
+        /// </summary>
         private readonly IClientRepository _clientRepository;
 
         /// <summary>
-		/// Defines the _identityResourceDataSeeder.
-		/// </summary>
+        /// Defines the _identityResourceDataSeeder.
+        /// </summary>
         private readonly IIdentityResourceDataSeeder _identityResourceDataSeeder;
 
         /// <summary>
-		/// Defines the _guidGenerator.
-		/// </summary>
+        /// Defines the _guidGenerator.
+        /// </summary>
         private readonly IGuidGenerator _guidGenerator;
 
         /// <summary>
-		/// Defines the _permissionDataSeeder.
-		/// </summary>
+        /// Defines the _permissionDataSeeder.
+        /// </summary>
         private readonly IPermissionDataSeeder _permissionDataSeeder;
 
         /// <summary>
-		/// Defines the _configuration.
-		/// </summary>
+        /// Defines the _configuration.
+        /// </summary>
         private readonly IConfiguration _configuration;
 
         /// <summary>
-		/// Defines the _currentTenant.
-		/// </summary>
+        /// Defines the _currentTenant.
+        /// </summary>
         private readonly ICurrentTenant _currentTenant;
 
         /// <summary>
-		/// Initializes a new instance of the <see cref="IdentityServerDataSeedContributor"/> class.
-		/// </summary>
-		/// <param name="clientRepository">The clientRepository<see cref="IClientRepository"/>.</param>
-		/// <param name="apiResourceRepository">The apiResourceRepository<see cref="IApiResourceRepository"/>.</param>
-		/// <param name="apiScopeRepository">The apiScopeRepository<see cref="IApiScopeRepository"/>.</param>
-		/// <param name="identityResourceDataSeeder">The identityResourceDataSeeder<see cref="IIdentityResourceDataSeeder"/>.</param>
-		/// <param name="guidGenerator">The guidGenerator<see cref="IGuidGenerator"/>.</param>
-		/// <param name="permissionDataSeeder">The permissionDataSeeder<see cref="IPermissionDataSeeder"/>.</param>
-		/// <param name="configuration">The configuration<see cref="IConfiguration"/>.</param>
-		/// <param name="currentTenant">The currentTenant<see cref="ICurrentTenant"/>.</param>
+        /// Initializes a new instance of the <see cref="IdentityServerDataSeedContributor"/> class.
+        /// </summary>
+        /// <param name="clientRepository">The clientRepository<see cref="IClientRepository"/>.</param>
+        /// <param name="apiResourceRepository">The apiResourceRepository<see cref="IApiResourceRepository"/>.</param>
+        /// <param name="apiScopeRepository">The apiScopeRepository<see cref="IApiScopeRepository"/>.</param>
+        /// <param name="identityResourceDataSeeder">The identityResourceDataSeeder<see cref="IIdentityResourceDataSeeder"/>.</param>
+        /// <param name="guidGenerator">The guidGenerator<see cref="IGuidGenerator"/>.</param>
+        /// <param name="permissionDataSeeder">The permissionDataSeeder<see cref="IPermissionDataSeeder"/>.</param>
+        /// <param name="configuration">The configuration<see cref="IConfiguration"/>.</param>
+        /// <param name="currentTenant">The currentTenant<see cref="ICurrentTenant"/>.</param>
         public IdentityServerDataSeedContributor(
             IClientRepository clientRepository,
             IApiResourceRepository apiResourceRepository,
@@ -97,10 +97,10 @@ namespace GroceryStore.IdentityServer
         }
 
         /// <summary>
-		/// The SeedAsync.
-		/// </summary>
-		/// <param name="context">The context<see cref="DataSeedContext"/>.</param>
-		/// <returns>The <see cref="Task"/>.</returns>
+        /// The SeedAsync.
+        /// </summary>
+        /// <param name="context">The context<see cref="DataSeedContext"/>.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
         [UnitOfWork]
         public virtual async Task SeedAsync(DataSeedContext context)
         {
@@ -114,18 +114,18 @@ namespace GroceryStore.IdentityServer
         }
 
         /// <summary>
-		/// The CreateApiScopesAsync.
-		/// </summary>
-		/// <returns>The <see cref="Task"/>.</returns>
+        /// The CreateApiScopesAsync.
+        /// </summary>
+        /// <returns>The <see cref="Task"/>.</returns>
         private async Task CreateApiScopesAsync()
         {
             await CreateApiScopeAsync("GroceryStore");
         }
 
         /// <summary>
-		/// The CreateApiResourcesAsync.
-		/// </summary>
-		/// <returns>The <see cref="Task"/>.</returns>
+        /// The CreateApiResourcesAsync.
+        /// </summary>
+        /// <returns>The <see cref="Task"/>.</returns>
         private async Task CreateApiResourcesAsync()
         {
             var commonApiUserClaims = new[]
@@ -142,11 +142,11 @@ namespace GroceryStore.IdentityServer
         }
 
         /// <summary>
-		/// The CreateApiResourceAsync.
-		/// </summary>
-		/// <param name="name">The name<see cref="string"/>.</param>
-		/// <param name="claims">The claims<see cref="IEnumerable{string}"/>.</param>
-		/// <returns>The <see cref="Task{ApiResource}"/>.</returns>
+        /// The CreateApiResourceAsync.
+        /// </summary>
+        /// <param name="name">The name<see cref="string"/>.</param>
+        /// <param name="claims">The claims<see cref="IEnumerable{string}"/>.</param>
+        /// <returns>The <see cref="Task{ApiResource}"/>.</returns>
         private async Task<ApiResource> CreateApiResourceAsync(
             string name,
             IEnumerable<string> claims
@@ -172,10 +172,10 @@ namespace GroceryStore.IdentityServer
         }
 
         /// <summary>
-		/// The CreateApiScopeAsync.
-		/// </summary>
-		/// <param name="name">The name<see cref="string"/>.</param>
-		/// <returns>The <see cref="Task{ApiScope}"/>.</returns>
+        /// The CreateApiScopeAsync.
+        /// </summary>
+        /// <param name="name">The name<see cref="string"/>.</param>
+        /// <returns>The <see cref="Task{ApiScope}"/>.</returns>
         private async Task<ApiScope> CreateApiScopeAsync(string name)
         {
             var apiScope = await _apiScopeRepository.GetByNameAsync(name);
@@ -191,9 +191,9 @@ namespace GroceryStore.IdentityServer
         }
 
         /// <summary>
-		/// The CreateClientsAsync.
-		/// </summary>
-		/// <returns>The <see cref="Task"/>.</returns>
+        /// The CreateClientsAsync.
+        /// </summary>
+        /// <returns>The <see cref="Task"/>.</returns>
         private async Task CreateClientsAsync()
         {
             var commonScopes = new[]
@@ -251,20 +251,20 @@ namespace GroceryStore.IdentityServer
         }
 
         /// <summary>
-		/// The CreateClientAsync.
-		/// </summary>
-		/// <param name="name">The name<see cref="string"/>.</param>
-		/// <param name="scopes">The scopes<see cref="IEnumerable{string}"/>.</param>
-		/// <param name="grantTypes">The grantTypes<see cref="IEnumerable{string}"/>.</param>
-		/// <param name="secret">The secret<see cref="string"/>.</param>
-		/// <param name="redirectUri">The redirectUri<see cref="string"/>.</param>
-		/// <param name="postLogoutRedirectUri">The postLogoutRedirectUri<see cref="string"/>.</param>
-		/// <param name="frontChannelLogoutUri">The frontChannelLogoutUri<see cref="string"/>.</param>
-		/// <param name="requireClientSecret">The requireClientSecret<see cref="bool"/>.</param>
-		/// <param name="requirePkce">The requirePkce<see cref="bool"/>.</param>
-		/// <param name="permissions">The permissions<see cref="IEnumerable{string}"/>.</param>
-		/// <param name="corsOrigins">The corsOrigins<see cref="IEnumerable{string}"/>.</param>
-		/// <returns>The <see cref="Task{Client}"/>.</returns>
+        /// The CreateClientAsync.
+        /// </summary>
+        /// <param name="name">The name<see cref="string"/>.</param>
+        /// <param name="scopes">The scopes<see cref="IEnumerable{string}"/>.</param>
+        /// <param name="grantTypes">The grantTypes<see cref="IEnumerable{string}"/>.</param>
+        /// <param name="secret">The secret<see cref="string"/>.</param>
+        /// <param name="redirectUri">The redirectUri<see cref="string"/>.</param>
+        /// <param name="postLogoutRedirectUri">The postLogoutRedirectUri<see cref="string"/>.</param>
+        /// <param name="frontChannelLogoutUri">The frontChannelLogoutUri<see cref="string"/>.</param>
+        /// <param name="requireClientSecret">The requireClientSecret<see cref="bool"/>.</param>
+        /// <param name="requirePkce">The requirePkce<see cref="bool"/>.</param>
+        /// <param name="permissions">The permissions<see cref="IEnumerable{string}"/>.</param>
+        /// <param name="corsOrigins">The corsOrigins<see cref="IEnumerable{string}"/>.</param>
+        /// <returns>The <see cref="Task{Client}"/>.</returns>
         private async Task<Client> CreateClientAsync(
             string name,
             IEnumerable<string> scopes,

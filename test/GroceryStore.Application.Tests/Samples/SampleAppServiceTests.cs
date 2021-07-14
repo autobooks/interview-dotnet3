@@ -1,5 +1,5 @@
-﻿using Shouldly;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Shouldly;
 using Volo.Abp.Identity;
 using Xunit;
 
@@ -10,6 +10,7 @@ namespace GroceryStore.Samples
      * (like IIdentityUserAppService here).
      * Only test your own application services.
      */
+
     public class SampleAppServiceTests : GroceryStoreApplicationTestBase
     {
         private readonly IIdentityUserAppService _userAppService;
