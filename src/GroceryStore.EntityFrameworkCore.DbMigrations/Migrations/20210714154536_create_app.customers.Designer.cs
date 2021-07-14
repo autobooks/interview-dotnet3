@@ -11,8 +11,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace GroceryStore.Migrations
 {
     [DbContext(typeof(GroceryStoreMigrationsDbContext))]
-    [Migration("20210713145858_Define_App.Customers")]
-    partial class Define_AppCustomers
+    [Migration("20210714154536_create_app.customers")]
+    partial class create_appcustomers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -25,7 +25,7 @@
                 {
                     b.ToTable("Customers", GroceryStoreConsts.DbSchemaApp);
                     b.ConfigureByConvention();
-
+                    b.Property(n => n.LegacyId).IsRequired();
                     b.HasAlternateKey(n => n.LegacyId);
                     b.Property(n => n.Name).IsRequired().HasMaxLength(255);
                 }

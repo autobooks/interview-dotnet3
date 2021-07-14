@@ -1,10 +1,22 @@
 # Rules in this file were initially inferred by Visual Studio IntelliCode from the C:\ckDev\interview-dotnet3 codebase based on best match to current usage at 7/12/2021
 # You can modify the rules from these initially generated values to suit your own policies
 # You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+
+root = true
+
+
+#ignore generated files
+[**.g.cs]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+# CS0436: Warning is overriding an error
+dotnet_diagnostic.CS0436.severity = none
+
 [*.cs]
-
-
-#Core editorconfig formatting - indentation
 
 #use soft tabs (spaces) for indentation
 indent_style = space
@@ -100,3 +112,10 @@ dotnet_style_qualification_for_field = false:suggestion
 dotnet_style_qualification_for_method = false:suggestion
 #prefer properties not to be prefaced with this. or Me. in Visual Basic
 dotnet_style_qualification_for_property = false:suggestion
+
+# CS1584: XML comment has syntactically incorrect cref attribute
+dotnet_diagnostic.CS1584.severity = none
+
+# CS1658: Warning is overriding an error
+dotnet_diagnostic.CS1658.severity = none
+

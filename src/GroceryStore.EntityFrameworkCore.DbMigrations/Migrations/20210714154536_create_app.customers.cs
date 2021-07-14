@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GroceryStore.Migrations
 {
-    public partial class Define_AppCustomers : Migration
+    public partial class create_appcustomers : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
