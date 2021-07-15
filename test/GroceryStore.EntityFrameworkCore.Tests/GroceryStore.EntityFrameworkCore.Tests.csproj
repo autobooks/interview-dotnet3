@@ -12,7 +12,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\GroceryStore.EntityFrameworkCore.DbMigrations\GroceryStore.EntityFrameworkCore.DbMigrations.csproj" />
 		<ProjectReference Include="..\GroceryStore.TestBase\GroceryStore.TestBase.csproj" />
-		<PackageReference Include="CSharpier.MsBuild" Version="0.9.7" />
 		<PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="4.3.3" />
 	</ItemGroup>
 

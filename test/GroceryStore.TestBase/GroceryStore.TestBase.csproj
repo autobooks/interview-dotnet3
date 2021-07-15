@@ -10,7 +10,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CSharpier.MsBuild" Version="0.9.7" />
 		<PackageReference Include="Volo.Abp.TestBase" Version="4.3.3" />
 		<PackageReference Include="Volo.Abp.Autofac" Version="4.3.3" />
 		<PackageReference Include="Volo.Abp.Authorization" Version="4.3.3" />

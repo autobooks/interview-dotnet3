@@ -24,7 +24,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CSharpier.MsBuild" Version="0.9.7" />
     <PackageReference Include="Volo.Abp.Emailing" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.Identity.Domain" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="4.3.3" />
