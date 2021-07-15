@@ -14,15 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="..\..\database.json" />
+    <EmbeddedResource Include="..\..\database.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="..\..\database.json">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.Identity.Domain" Version="4.3.3" />

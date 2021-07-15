@@ -1,8 +1,8 @@
 ﻿namespace GroceryStore.Customers
 {
-    using System;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Threading.Tasks;
     using Newtonsoft.Json.Linq;
     using Volo.Abp.Data;
@@ -41,9 +41,10 @@
                 return;
             }
 
-            var x = AppDomain.CurrentDomain.BaseDirectory;
+            var stream = Assembly.GetExecutingAssembly().GetManifestResourceNames().FirstOrDefault(r => r.EndsWith("database.json"));
+
             using var sRdr = new StreamReader(
-                AppDomain.CurrentDomain.BaseDirectory + @"\database.json"
+                Assembly.GetExecutingAssembly().GetManifestResourceStream(stream)
             );
             var text = sRdr.ReadToEnd();
             var customers = JObject.Parse(text)

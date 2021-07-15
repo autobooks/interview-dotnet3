@@ -24,13 +24,15 @@
         /// </summary>
         /// <param name="args">The args<see cref="string[]"/>.</param>
         /// <returns>The <see cref="IHostBuilder"/>.</returns>
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureServices(
                     (hostContext, services) =>
                     {
                         services.AddHostedService<ConsoleTestAppHostedService>();
                     }
                 );
+        }
     }
 }
