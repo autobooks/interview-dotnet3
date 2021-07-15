@@ -2,18 +2,23 @@
 # You can modify the rules from these initially generated values to suit your own policies
 # You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
 
-#ignore generated files
-[**.g.cs]
+[*.g.cs]
+
+generated_code = true
 charset = unset
 end_of_line = unset
 insert_final_newline = unset
 trim_trailing_whitespace = unset
 indent_style = unset
 indent_size = unset
-# CS0436: Warning is overriding an error
+
+# CS0436: Type conflicts with imported type
 dotnet_diagnostic.CS0436.severity = none
 
 [*.cs]
+
+# CS0436: Type conflicts with imported type
+dotnet_diagnostic.CS0436.severity = none
 
 #use soft tabs (spaces) for indentation
 indent_style = space
@@ -116,9 +121,6 @@ dotnet_diagnostic.CS1584.severity = none
 # CS1658: Warning is overriding an error
 dotnet_diagnostic.CS1658.severity = none
 
-
-# CS0436: Type conflicts with imported type
-dotnet_diagnostic.CS0436.severity = error
 
 # IDE0090: Use 'new(...)'
 dotnet_diagnostic.IDE0090.severity = none

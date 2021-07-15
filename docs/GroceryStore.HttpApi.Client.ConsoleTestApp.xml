@@ -4,5 +4,76 @@
         <name>GroceryStore.HttpApi.Client.ConsoleTestApp</name>
     </assembly>
     <members>
+        <member name="T:GroceryStore.HttpApi.Client.ConsoleTestApp.ClientDemoService">
+            <summary>
+            Defines the <see cref="T:GroceryStore.HttpApi.Client.ConsoleTestApp.ClientDemoService" />.
+            </summary>
+        </member>
+        <member name="F:GroceryStore.HttpApi.Client.ConsoleTestApp.ClientDemoService._profileAppService">
+            <summary>
+            Defines the _profileAppService.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.HttpApi.Client.ConsoleTestApp.ClientDemoService.#ctor(Volo.Abp.Identity.IProfileAppService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GroceryStore.HttpApi.Client.ConsoleTestApp.ClientDemoService"/> class.
+            </summary>
+            <param name="profileAppService">The profileAppService<see cref="T:Volo.Abp.Identity.IProfileAppService"/>.</param>
+        </member>
+        <member name="M:GroceryStore.HttpApi.Client.ConsoleTestApp.ClientDemoService.RunAsync">
+            <summary>
+            The RunAsync.
+            </summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.HttpApi.Client.ConsoleTestApp.ConsoleTestAppHostedService">
+            <summary>
+            Defines the <see cref="T:GroceryStore.HttpApi.Client.ConsoleTestApp.ConsoleTestAppHostedService" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.HttpApi.Client.ConsoleTestApp.ConsoleTestAppHostedService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            The StartAsync.
+            </summary>
+            <param name="cancellationToken">The cancellationToken<see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.HttpApi.Client.ConsoleTestApp.ConsoleTestAppHostedService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            The StopAsync.
+            </summary>
+            <param name="cancellationToken">The cancellationToken<see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="T:GroceryStore.HttpApi.Client.ConsoleTestApp.GroceryStoreConsoleApiClientModule">
+            <summary>
+            Defines the <see cref="T:GroceryStore.HttpApi.Client.ConsoleTestApp.GroceryStoreConsoleApiClientModule" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.HttpApi.Client.ConsoleTestApp.GroceryStoreConsoleApiClientModule.PreConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+            <summary>
+            The PreConfigureServices.
+            </summary>
+            <param name="context">The context<see cref="T:Volo.Abp.Modularity.ServiceConfigurationContext"/>.</param>
+        </member>
+        <member name="T:GroceryStore.HttpApi.Client.ConsoleTestApp.Program">
+            <summary>
+            Defines the <see cref="T:GroceryStore.HttpApi.Client.ConsoleTestApp.Program" />.
+            </summary>
+        </member>
+        <member name="M:GroceryStore.HttpApi.Client.ConsoleTestApp.Program.Main(System.String[])">
+            <summary>
+            The Main.
+            </summary>
+            <param name="args">The args<see cref="!:string[]"/>.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/>.</returns>
+        </member>
+        <member name="M:GroceryStore.HttpApi.Client.ConsoleTestApp.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            The CreateHostBuilder.
+            </summary>
+            <param name="args">The args<see cref="!:string[]"/>.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/>.</returns>
+        </member>
     </members>
 </doc>

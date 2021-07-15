@@ -20,10 +20,6 @@ jobs:
     - name: Restore dependencies 
       run:         
         dotnet restore
-    - name: Formatt
-      run:
-        dotnet tool restore
-        dotnet csharpier --check
     - name: Build
       run: dotnet build --no-restore
     - name: Test
