@@ -42,6 +42,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		database.json = database.json
 		.config\dotnet-tools.json = .config\dotnet-tools.json
+		.github\workflows\push.yml = .github\workflows\push.yml
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -49,7 +50,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cake", "cake", "{1BAC2B2E-1
 	ProjectSection(SolutionItems) = preProject
 		_coverage.cake = _coverage.cake
 		_format.cake = _format.cake
-		_merge.cake = _merge.cake
+		_push.cake = _push.cake
 	EndProjectSection
 EndProject
 Global

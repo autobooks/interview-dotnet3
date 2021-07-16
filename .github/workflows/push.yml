@@ -1,8 +1,12 @@
+# This cake file will be run on push to remote.
+# It will reject in the following cases
+#    - Not formatted with csharpier. To solve this, open cmd and execute ```dotnet cake _format.cake```
+#    - Build Fails. Build errors exist. Fix issues.
+#    - Tests or coverage fails. See details in _coverage.cake, test runner, and/or coverage report. 
+
 name: .NET
 
-on:
-    pull_request:
-        branches: [master]
+on: [push]
 
 jobs:
     build:
@@ -19,4 +23,4 @@ jobs:
             - name: Restore tools
               run: dotnet tool restore
             - name: Check format
-              run: dotnet cake _merge.cake
+              run: dotnet cake push.cake
