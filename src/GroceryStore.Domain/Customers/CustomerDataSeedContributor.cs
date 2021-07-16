@@ -41,7 +41,9 @@
                 return;
             }
 
-            var stream = Assembly.GetExecutingAssembly().GetManifestResourceNames().FirstOrDefault(r => r.EndsWith("database.json"));
+            var stream = Assembly.GetExecutingAssembly()
+                .GetManifestResourceNames()
+                .FirstOrDefault(r => r.EndsWith("database.json"));
 
             using var sRdr = new StreamReader(
                 Assembly.GetExecutingAssembly().GetManifestResourceStream(stream)

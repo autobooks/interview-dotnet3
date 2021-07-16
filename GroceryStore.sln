@@ -41,8 +41,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		database.json = database.json
-		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.config\dotnet-tools.json = .config\dotnet-tools.json
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cake", "cake", "{1BAC2B2E-1A08-4A64-8661-52BD60BB66CB}"
+	ProjectSection(SolutionItems) = preProject
+		_coverage.cake = _coverage.cake
+		_format.cake = _format.cake
+		_merge.cake = _merge.cake
 	EndProjectSection
 EndProject
 Global
@@ -131,6 +138,7 @@ Global
 		{EF480016-9127-4916-8735-D2466BDBC582} = {04DBDB01-70F4-4E06-B468-8F87850B22BE}
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{16F0BF4E-7D73-4278-8D9A-7CDE37105C6B} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
+		{1BAC2B2E-1A08-4A64-8661-52BD60BB66CB} = {BF7721A4-54F5-4B3C-8895-1AF99986EDF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28315BFD-90E7-4E14-A2EA-F3D23AF4126F}

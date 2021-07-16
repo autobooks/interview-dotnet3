@@ -12,6 +12,10 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\GroceryStore.EntityFrameworkCore.DbMigrations\GroceryStore.EntityFrameworkCore.DbMigrations.csproj" />
 		<ProjectReference Include="..\GroceryStore.TestBase\GroceryStore.TestBase.csproj" />
+		<PackageReference Include="coverlet.collector" Version="3.0.3">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="4.3.3" />
 	</ItemGroup>
 
