@@ -23,4 +23,4 @@ jobs:
             - name: Restore tools
               run: dotnet tool restore
             - name: Check format
-              run: dotnet cake push.cake
+              run: dotnet cake _push.cake
