@@ -1,0 +1,24 @@
+#addin "nuget:?package=Cake.DoInDirectory&version=4.0.2"
+var target = Argument("target", "Migrate");
+
+//////////////////////////////////////////////////////////////////////
+// TASKS
+//////////////////////////////////////////////////////////////////////
+
+Task("Build")
+    .Does(() =>
+    {
+        DotNetCoreBuild("GroceryStore.sln");
+    });
+Task("Migrate")
+    .IsDependentOn("Build")
+    .Does(() => {
+        DoInDirectory(@"src/GroceryStore.DbMigrator",
+            () => DotNetCoreRun());
+    });
+
+/////////////////////////////////////////////////////////////////////
+// EXECUTION
+//////////////////////////////////////////////////////////////////////
+
+RunTarget(target);

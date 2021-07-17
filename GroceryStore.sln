@@ -50,7 +50,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cake", "cake", "{1BAC2B2E-1
 	ProjectSection(SolutionItems) = preProject
 		_coverage.cake = _coverage.cake
 		_format.cake = _format.cake
+		_migrations.cake = _migrations.cake
 		_push.cake = _push.cake
+		_setup.cake = _setup.cake
 	EndProjectSection
 EndProject
 Global

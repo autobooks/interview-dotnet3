@@ -1,12 +1,12 @@
 ﻿namespace GroceryStore.Customers
 {
     using System;
-    using Volo.Abp.Domain.Entities;
+    using Volo.Abp.Domain.Entities.Auditing;
 
     /// <summary>
     /// Defines the <see cref="Customer" />.
     /// </summary>
-    public class Customer : Entity<Guid>
+    public class Customer : AuditedAggregateRoot<Guid>
     {
         /// <summary>
         /// Gets or sets the LegacyId.

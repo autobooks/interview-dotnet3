@@ -4,15 +4,17 @@ using GroceryStore.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace GroceryStore.Migrations
 {
     [DbContext(typeof(GroceryStoreMigrationsDbContext))]
-    partial class GroceryStoreMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210717151733_add_full_auditing_to_app.customers")]
+    partial class add_full_auditing_to_appcustomers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
