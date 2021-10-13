@@ -1,12 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>0.0.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\ebrager\Documents\GitHub\interview-dotnet3\GroceryStoreAPI\bin\Debug\net5.0\GroceryStoreAPI.xml</DocumentationFile>
+    <OutputPath>\bin\Debug\net5.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <PackageReference Include="Autofac" Version="6.2.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="DataAccess\Queries\select-all-customers.sql" />
+    <None Remove="DataAccess\Queries\select-customer-by-id.sql" />
+    <None Remove="DataAccess\Queries\delete-customer.sql" />
+    <None Remove="DataAccess\Queries\update-customer-by-id.sql" />
+    <None Remove="DataAccess\Queries\insert-customer.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="DataAccess\Queries\select-all-customers.sql" />
+    <EmbeddedResource Include="DataAccess\Queries\select-customer-by-id.sql" />
+    <EmbeddedResource Include="DataAccess\Queries\delete-customer.sql" />
+    <EmbeddedResource Include="DataAccess\Queries\update-customer-by-id.sql" />
+    <EmbeddedResource Include="DataAccess\Queries\insert-customer.sql" />
+  </ItemGroup>
 
 </Project>
